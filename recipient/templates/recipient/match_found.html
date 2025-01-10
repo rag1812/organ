@@ -1,0 +1,16 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Match Found</title>
+</head>
+<body> 
+    <h2>Matching Donors Found</h2>
+<ul>
+    {% for donor in donors %}
+    <li>{{ donor.name }} - {{ donor.organ }}</li>
+    <a href="{% url 'send_request' recipient.id donor.id %}" class="btn btn-primary">Send Request</a>
+    {% endfor %}
+</ul>
+</body>
+</html>

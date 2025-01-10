@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Donor Details</title>
+</head>
+<body>
+    <h1>Your Donation Details</h1>
+
+    <table border="1">
+        <tr>
+            <th>Organ</th>
+            <th>Blood Group</th>
+            <th>Age</th>
+            <th>Location</th>
+            <th>Mobile Number</th>
+            <th>Deceased</th>
+            <th>HIV Status</th>
+            <th>Willing to Donate</th>
+        </tr>
+        {% for donor in donors %}
+        <tr>
+            <td>{{ donor.organ }}</td>
+            <td>{{ donor.blood_group }}</td>
+            <td>{{ donor.age }}</td>
+            <td>{{ donor.location }}</td>
+            <td>{{ donor.mobile_number }}</td>
+            <td>{{ donor.is_deceased }}</td>
+            <td>{{ donor.hiv_status }}</td>
+            <td>{{ donor.willing_to_donate }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <a href="{% url 'new_donor' %}">Donate More Organs</a>
+</body>
+</html>
